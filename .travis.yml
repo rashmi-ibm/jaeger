@@ -1,5 +1,7 @@
 sudo: required
-
+arch: ppc64le
+os:
+  - linux
 language: go
 go_import_path: github.com/jaegertracing/jaeger
 
@@ -61,7 +63,7 @@ install:
   - |
     if [ "$PROTO_GEN_TEST" == true ]; then
         make proto-install
-        curl -L https://github.com/google/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip -o /tmp/protoc.zip
+        curl -L https://github.com/google/protobuf/releases/download/v3.7.0/protoc-3.7.0-linux-ppcle_64.zip -o /tmp/protoc.zip
         unzip /tmp/protoc.zip -d "$HOME"/protoc
     fi
 
